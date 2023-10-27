@@ -7,7 +7,9 @@
     "dev": "webpack --mode development",
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "prepare": "husky install",
+    "format": "prettier --write 'src/**/*.{js,scss}'"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +18,11 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.2",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
+    "prettier": "3.0.3",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
@@ -28,5 +33,10 @@
   "dependencies": {
     "normalize-scss": "^7.0.1",
     "normalize.css": "^8.0.1"
+  },
+  "lint-staged": {
+    "src/**/*.js|scss": [
+      "npm run format"
+    ]
   }
 }

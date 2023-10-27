@@ -17,6 +17,6 @@ closeBtn.addEventListener("click", closeModal);
 
 openBtn.addEventListener("click", openModal);
 
-modal.addEventListener("click", (e) => {
+modal.addEventListener("click", e => {
   if (e.target.closest(".window") != wnd) closeModal();
 });
