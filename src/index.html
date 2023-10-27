@@ -7,7 +7,16 @@
   </head>
   <body>
     <div class="container">
-      <form action="" method="post" class="form">
+      <button class="info">?</button>
+
+      <div class="modal">
+        <div class="window">
+            <button class="close">X</button>
+            <h3>Random modal window with info</h3>
+        </div>
+      </div>
+
+      <form action="" method="get" class="form">
         <h2 class="title">Contact Us</h3>
         <div class="field">
           <label for="name">Name</label>
@@ -18,6 +27,7 @@
           <input
             type="email"
             id="email"
+            name="email"
             pattern=".+@+.+\.com"
             size="30"
             placeholder="Enter a valid email address"

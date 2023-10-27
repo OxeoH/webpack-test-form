@@ -1,0 +1,49 @@
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .window {
+    text-align: center;
+    padding: 1rem 2rem;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 1rem rgba($color: black, $alpha: 0.6);
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0 0.5rem;
+      transform: translate(25%, -25%);
+      color: white;
+      background-color: red;
+      float: right;
+      font-size: 28px;
+      border-radius: 50%;
+      font-weight: bold;
+      border: none;
+    }
+  }
+
+  &.modal-opened {
+    visibility: visible;
+    opacity: 1;
+  }
+}

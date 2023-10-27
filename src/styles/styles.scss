@@ -1,6 +1,7 @@
 @import "~normalize.css";
 
 body {
+  width: 100%;
   max-height: 100vh;
   height: 100%;
   background-color: rgb(230, 219, 238);
@@ -22,7 +23,7 @@ body {
 }
 
 .container {
-  padding: 2rem;
+  padding-top: 2rem;
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -72,4 +73,15 @@ body {
   &:hover {
     background-color: #e0701b;
   }
+}
+
+.info {
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  border: 0.1rem solid black;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-weight: 700;
+
+  transform: translate(30%, -30%);
 }
