@@ -1,6 +1,7 @@
 "use strict";
 
 import { baseInstance } from "./axios";
+import IMask from "imask";
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("#form");
@@ -8,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailInput = document.querySelector("#email");
   const phoneInput = document.querySelector("#phone");
   const messageInput = document.querySelector("#message");
+
+  const phoneMask = new IMask(phoneInput, {
+    mask: "+{375}(00)000-00-00",
+  });
 
   form.addEventListener("submit", sendForm);
 
@@ -22,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
           inputs: {
             nameInput: nameInput.value,
             emailInput: emailInput.value,
-            phoneInput: phoneInput.value,
+            phoneInput: phoneMask.unmaskedValue,
             messageInput: messageInput.value,
           },
         });
@@ -51,6 +56,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (input.id === "email") {
         if (!validateEmail(input.value)) {
+          formAddError(input);
+          wrongFields++;
+        }
+      }
+
+      if (input.id === "phone") {
+        if (!phoneMask.masked.isComplete) {
           formAddError(input);
           wrongFields++;
         }
