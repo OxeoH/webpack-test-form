@@ -19,4 +19,4 @@ In the project directory, you can run:
 
 ## Instructions
 
-You need to open the projects directory, open dist/index.html in your browser, then run in your terminal command `npm server`.
+You need to open the projects directory, open `dist/index.html` in your browser, then run in your terminal command `npm server`.
