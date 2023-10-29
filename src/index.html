@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,39 +11,54 @@
 
       <div class="modal">
         <div class="window">
-            <button class="close">X</button>
-            <h3>Random modal window with info</h3>
+          <button class="close">X</button>
+          <h3>Random modal window with info</h3>
         </div>
       </div>
 
-      <form action="" method="get" class="form">
-        <h2 class="title">Contact Us</h3>
+      <form method="get" class="form" id="form">
+        <h3 class="title">Contact Us</h3>
         <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" class="input" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            class="input _req"
+          />
         </div>
         <div class="field">
           <label for="email">Email</label>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
-            pattern=".+@+.+\.com"
-            size="30"
             placeholder="Enter a valid email address"
-            class="input"
-            required
+            class="input _req"
           />
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="input" required />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            class="input _req"
+          />
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Enter your message" class="input" required></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Enter your message"
+            class="input _req"
+          ></textarea>
         </div>
-        <div class="field"><input type="submit" value="Submit" class="submit"/></div>
+        <div class="field"><input type="submit" value="Submit" class="submit" /></div>
       </form>
     </div>
   </body>

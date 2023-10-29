@@ -1,12 +1,20 @@
 @import "~normalize.css";
 
 body {
-  width: 100%;
-  max-height: 100vh;
-  height: 100%;
   background-color: rgb(230, 219, 238);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
     Verdana, sans-serif;
+  max-height: 100vh;
+  height: 100%;
+
+  &.modal-opened {
+    @media (max-height: 685px) {
+      padding-right: 17px;
+    }
+
+    height: 100vh;
+    overflow-y: hidden;
+  }
 }
 
 .input {
@@ -20,27 +28,31 @@ body {
   &:active {
     outline: 0;
   }
+
+  &._error {
+    box-shadow: 2px 2px 4px red;
+  }
 }
 
 .container {
   padding-top: 2rem;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .form {
   padding: 1rem 2rem;
-  max-width: 25%;
-  width: 100%;
-  margin: 0 auto;
   background-color: white;
   display: flex;
+  width: 20%;
+  height: 100%;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem;
   box-shadow: 2px 2px 1rem rgba($color: black, $alpha: 0.6);
 }
@@ -69,6 +81,7 @@ body {
   padding: 1rem;
   font-size: 28px;
   border-radius: 1rem;
+  transition: background-color 0.2s linear;
   background-color: #652c87;
   &:hover {
     background-color: #e0701b;
@@ -82,6 +95,5 @@ body {
   background-color: rgb(230, 230, 230);
   color: black;
   font-weight: 700;
-
-  transform: translate(30%, -30%);
+  margin-bottom: 1rem;
 }
